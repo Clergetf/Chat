@@ -1,16 +1,33 @@
 <?php
 $title = "Chat";
 require 'class/Login.php';
+//require 'class/Message.php';
 include 'elements/header.php';
 
 $username = (new Login());
 $pdo = (new Connexion)->getPDO();
+//$sth = (new Message())->getMessage();
+//$query = (new Message())->postMessage();
 
 if (!isset($_SESSION['loggedin'])) {
     header('Location: loginform.php');
     exit;
 }
-var_dump($_SESSION);
+
+if(isset($_POST['message'])) 
+{
+    $message = $_POST['message'];
+    $date = date("F j, Y, g:i a");
+    $sender = $_SESSION['username'];
+
+    $sth=$pdo->prepare("INSERT INTO message (content,sendAt,sender) VALUES ('$message','$date','$sender')");
+    $sth->execute();
+}
+
+
+$query= $pdo->query("SELECT content, sendAt, sender FROM message");
+$utilisateur= $pdo->query("SELECT username FROM user");
+
 
 
 
@@ -18,29 +35,14 @@ var_dump($_SESSION);
 
 <div class="chat">
     <div class="chatbox">
-        <h1>Messages</h1>
+        <h4>Messages</h4>
         <div class="blockchat scroll">
-        <p class="message">Message 1</p>
-        <p class="message">Message 2</p>
-        <p class="message">Message 3</p>
-        <p class="message">Message 4</p>
-        <p class="message">Message 5</p>
-        <p class="message">Message 7</p>
-        <p class="message">Message 8</p>
-        <p class="message">Message 9</p>
-        <p class="message">Message 10</p>
-        <p class="message">Message 11</p>
-        <p class="message">Message 12</p>
-        <p class="message">Message 13</p>
-        <p class="message">Message 14</p>
-        <p class="message">Message 15</p>
-        <p class="message">Message 16</p>
-        <p class="message">Message 17</p>
-        <p class="message">Message 18</p>
-        <p class="message">Message 19</p>
-        <p class="message">Message 20</p>
-        <p class="message">Message 21</p>
-        <p class="message">Message 22</p>
+        <?php while ($entry = $query->fetchArray(SQLITE3_ASSOC) )
+ {
+    echo '<p id="messages" class="message">'.'Utilisateur : ' . '<strong>'.htmlentities($entry['sender']).'</strong>' . ' le ' . htmlentities($entry['sendAt']). '<br>' .
+      'Message : ' . htmlentities($entry['content']) .'</p>';
+} ?>
+     
 
     </div>
         <form action="chat.php" method="post">
@@ -48,35 +50,18 @@ var_dump($_SESSION);
             <button name="sendmessage" class="sendmessage" >Envoyer</button>
         </form>
     </div>
-    <div class="users"><h1>Utilisateurs</h1>
+    <div class="users"><h4>Utilisateurs</h4>
     <div class="blockusers scroll">
-    <p class="utilisateur"> <?php echo $_SESSION['username'] ?></p>
-    <p class="utilisateur">Utilisateur 2</p>
-    <p class="utilisateur">Utilisateur 3</p>
-    <p class="utilisateur">Utilisateur 4</p>
-    <p class="utilisateur">Utilisateur 5</p>
-    <p class="utilisateur">Utilisateur 6</p>
-    <p class="utilisateur">Utilisateur 7</p>
-    <p class="utilisateur">Utilisateur 8</p>
-    <p class="utilisateur">Utilisateur 9</p>
-    <p class="utilisateur">Utilisateur 10</p>
-    <p class="utilisateur">Utilisateur 11</p>
-    <p class="utilisateur">Utilisateur 12</p>
-    <p class="utilisateur">Utilisateur 13</p>
-    <p class="utilisateur">Utilisateur 14</p>
-    <p class="utilisateur">Utilisateur 15</p>
-    <p class="utilisateur">Utilisateur 16</p>
-    <p class="utilisateur">Utilisateur 17</p>
-    <p class="utilisateur">Utilisateur 18</p>
-    <p class="utilisateur">Utilisateur 19</p>
-    <p class="utilisateur">Utilisateur 20</p>
-    <p class="utilisateur">Utilisateur 21</p>
-    <p class="utilisateur">Utilisateur 22</p>
+    <?php while ($user = $utilisateur->fetchArray(SQLITE3_ASSOC) )
+ {
+    echo '<p class="utilisateur">'.htmlentities($user['username']).'</p>';
+} ?>
     </div>
+    <div><a href="logout.php">Logout</a></div>
 </div>
 </div>
 
-
+<script src="script.js"></script>
 
 <?php
 include 'elements/footer.php';
