@@ -1,8 +1,8 @@
-var height = 0;
-$('div p').each(function(i, value){
-    height += parseInt($(this).height());
-});
+//scroll fixe bottom
 
-height += '';
+document.getElementsByClassName('scroll')[0].scrollTop = document.getElementsByClassName('scroll')[0].scrollHeight;
 
-$('div').animate({scrollTop: height});
+//refresh chat 
+
+
+

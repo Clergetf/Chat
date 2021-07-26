@@ -1,10 +1,6 @@
 <?php
 $title = "Login";
-include 'elements/header.php';
-require 'class/Login.php';
-
-$query = (new Login())->log_in();
-
+include 'header.php';
 ?>
 
 
@@ -12,7 +8,7 @@ $query = (new Login())->log_in();
 <header class="area"><h1>Formulaire de connexion</h1></header>
 
 <div class="d-flex justify-content-center mt-5">
-    <form action="loginform.php" method="post">
+    <form action="login.php" method="post">
         <div class="form-group">
             <label>Username :</label>
             <input type="text" name="username" placeholder="Votre pseudo" required="required" class="form-control"> 
@@ -29,7 +25,8 @@ $query = (new Login())->log_in();
 
 
 
+
 <?php
-include 'elements/footer.php';
+include 'footer.php';
 
 ?>
