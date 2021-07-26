@@ -3,7 +3,7 @@
 $pdo = (new Connexion)->getPDO();
 
 if (isset($_POST['message'])) {
-    $message = $_POST['message'];
+    $message = htmlspecialchars($_POST['message']);
     $date = date("F j, Y, g:i a");
     $sender = $_SESSION['username'];
 
