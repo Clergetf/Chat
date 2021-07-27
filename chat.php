@@ -14,11 +14,13 @@ if (!isset($_SESSION['loggedin'])) {
 require 'getmessage.php';
 ?>
 
-<div class="chat">
+<div id="chatplace" class="chat">
     <div class="chatbox">
         <h4>Messages</h4>
         <div id="chatbox" class="blockchat scroll">
+            <div id="chatbox">
         <?php include 'chatlog.php'; ?>
+        </div>
      
 
     </div>
@@ -35,7 +37,7 @@ require 'getmessage.php';
 <div>        
     <form class="messagebox" action="chat.php" method="post">
             <textarea id ="usrmsg" class="envoimessage" name="message"></textarea>
-            <button name="sendmessage" class="sendmessage" >Envoyer</button>
+            <button type="submit" id="chatSubmit" name="sendmessage" class="sendmessage" >Envoyer</button>
         </form>
     </div>
 </div>
