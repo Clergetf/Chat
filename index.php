@@ -5,7 +5,7 @@
         <meta charset= "utf-8">   
         <script type="text/javascript">
             var delai=0; // Delai en secondes
-            var url='./login/inscription.php'; // Url de destination
+            var url='./formulaire/register.php'; // Url de destination
             setTimeout("document.location.replace(url)", delai + '000');
             </script>      
     </head>

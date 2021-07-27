@@ -9,6 +9,25 @@
     <title>Chat SFJ</title>
 </head>
     <body>
+    <div class="chat">
+    <div class="chatbox">
+        <h2 class="h2">Chat</h2>
+
+
+        
+
+    <div class="sendmsg">
+    <input type="text"  class="sendmsgbar" placeholder="Entrer votre message" style="width: 1000px; height: 55px;" >
+    </div>
+      
+
+    </div>
+
+    <div class="users"><h4 class="title-users">Utilisateurs</h4>
+    <div class="blockusers scroll">
+    </div>
+
     
-    </body>
+   
+  </body>
 </html>

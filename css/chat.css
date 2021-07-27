@@ -2,3 +2,50 @@ body{
     background: #264055;
     font-family: 'Ubuntu', sans-serif;
 }
+
+.chat {
+    display: grid; 
+    grid-template-columns: 4fr 1fr; 
+    color : #f4f8fc;
+    background-color: rgba(131, 181, 255, 0.267);
+    border: none;
+    box-shadow: inset 0px 3px 4px rgba(255,255,255,0.5), ;
+    background-size: 150%;
+    background-position: right;
+}
+  
+.chatbox {
+    
+    /*background-color: rgb(150, 20, 20, 0.8);*/
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-bottom: 10px solid #264055;
+    
+    
+  
+}
+  
+.users {
+    border-left: 10px solid #264055;
+    padding-left: 5%;
+    
+}
+  
+.title-users {
+    padding-top: 4%;
+    padding-left: 25%;
+    border-bottom: 10px solid #264055;
+}
+
+.sendmsgbar {
+    margin-top: 45%;
+  
+}
+
+
+.h2 {
+    border-bottom: 10px solid #264055;
+}
+
+
