@@ -15,8 +15,8 @@
             <form action="./login_verif.php" method="post">
                 <h1>Connexion</h1>
 
-                <label><b>E-mail</b></label>
-                <input type="text" placeholder="Entrez votre E-mail" name="email" required>
+                <label><b>Pseudo</b></label>
+                <input type="text" placeholder="Entrez votre pseudo" name="username" required>
 
                 <label><b>Mot de passe</b></label>
                 <input type="password" placeholder="Entrez votre mot de passe" name="password" required>

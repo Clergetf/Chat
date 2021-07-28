@@ -8,25 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat SFJ</title>
 </head>
-    <body>
-    <div class="chat">
+ 
+
+
+
     <div class="chatbox">
-        <h2 class="h2">Chat</h2>
+        <h1 class="titlemessage">Message</h1>
+        <h1 class="titlemembre">Membre</h1>
+        <div class="chat">
 
+        </div>
 
-        
-
-    <div class="sendmsg">
-    <input type="text"  class="sendmsgbar" placeholder="Entrer votre message" style="width: 1000px; height: 55px;" >
-    </div>
-      
-
+       
     </div>
 
-    <div class="users"><h4 class="title-users">Utilisateurs</h4>
-    <div class="blockusers scroll">
+    <div class="messagebar">
+    <input class="bar" type="text" placeholder="Entrer votre texte"hhhhhhyyyjkkkkkiii   
+    >
+    <button class="button">Envoyez</button>
     </div>
-
     
    
   </body>
