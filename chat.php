@@ -30,6 +30,25 @@ require 'getmessage.php';
     <div class="blockusers scroll">
     <?php include 'getuser.php'; ?>
     </div>
+    
+<!-- The Popup -->
+<div id="myPopup" class="Popup">
+
+  <!-- Popup content -->
+  <div class="Popup-content">
+    <span class="close">&times;</span>
+    <p id="popupcontent">Envoyez un message privé à <span id="popupuser"></span></p>
+    <div>
+        <form id="privatechat" class="privatemessagebox" action="chat.php" method="POST">
+            <textarea name="privatemessage" id="privatemessage" class="envoiprivatemessage"></textarea>
+            <button type="submit" id="privatechatSubmit" name="sendprivatemessage" class="sendprivatemessage"> envoyer</button>
+        </form>
+    </div>
+    <div id="result"></div>
+  </div>
+
+</div>
+
 
     <div><a class="text-decoration-none" href="logout.php"><button type="button">Logout</button></a></div>
 </div>
@@ -43,6 +62,8 @@ require 'getmessage.php';
 </div>
 
 <script src="script.js"></script>
+<script src="ajax.js"></script>
+
 
 <?php
 include 'elements/footer.php';

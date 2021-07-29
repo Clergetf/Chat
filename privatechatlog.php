@@ -1,10 +1,9 @@
 <?php
 
-
 $pdo = (new Connexion)->getPDO();
 
 
-$query= $pdo->query("SELECT content, sendAt, sender FROM message");
+$query= $pdo->query("SELECT content, sendAt, sender FROM message ORDER BY id DESC LIMIT 10 ");
 
 while ($entry = $query->fetchArray(SQLITE3_ASSOC) )
  {
@@ -13,5 +12,6 @@ while ($entry = $query->fetchArray(SQLITE3_ASSOC) )
 }
 
 $pdo->close();
+
 
 ?>
