@@ -12,6 +12,8 @@ if (!isset($_SESSION['loggedin'])) {
     exit;
 }
 require 'getmessage.php';
+require 'getprivatemessage.php';
+
 ?>
 
 <div id="chatplace" class="chat">
@@ -44,6 +46,10 @@ require 'getmessage.php';
             <button type="submit" id="privatechatSubmit" name="sendprivatemessage" class="sendprivatemessage"> envoyer</button>
         </form>
     </div>
+    <div>
+        <?php include 'privatechatlog.php'; 
+        var_dump($user2);?>
+    </div>
     <div id="result"></div>
   </div>
 
@@ -61,8 +67,8 @@ require 'getmessage.php';
     </div>
 </div>
 
-<script src="script.js"></script>
-<script src="ajax.js"></script>
+<script src="script.js">async</script>
+
 
 
 <?php

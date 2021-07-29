@@ -1,4 +1,15 @@
 <?php session_start(); 
-$date = date("F j, Y, g:i a")?>
+$user2 = $_COOKIE['user2'];
+$user1 = $_SESSION['username'];
+$message = $_POST['privatemessage'];
+$date = date("F j, Y, g:i a");
 
-From <?= $_SESSION['username'] .' '. ' le ' . $date . '<br>' . $_POST['privatemessage']?>
+
+?>
+
+From <?= $user1 .' '. ' le ' . $date . '<br>' . $_POST['privatemessage'] . ' pour ' . $user2?>
+
+
+<?php
+
+?>

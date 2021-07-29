@@ -39,6 +39,7 @@ let span = document.getElementsByClassName("close")[0];
             let user2 = this.textContent;
             popup.style.display = "block";
             popuser.textContent = user2
+            document.cookie = "user2="+user2;
 
             })
         }
@@ -46,22 +47,25 @@ let span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the pop
 span.addEventListener('click', function() {
   popup.style.display = "none";
+  
 })
 
 // When the user clicks anywhere outside of the pop, close it
 window.addEventListener('click', function(event) {
   if (event.target == popup) {
     popup.style.display = "none";
+    
   }
 }) 
     
-let form = document.getElementById("privatechat")
+/*let form = document.getElementById("privatechat")
 let privatemessage = document.getElementById('privatemessage');
 form.addEventListener('submit', function(e) {
-    e.preventDefault();
+    //e.preventDefault();
     let user2 = popuser.textContent;
     let content = privatemessage.value;
-
     
 
-})
+
+})*/
+
