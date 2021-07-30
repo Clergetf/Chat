@@ -17,6 +17,11 @@ $(document).ready(function(){
         document.getElementsByClassName('scroll')[0].scrollTop = document.getElementsByClassName('scroll')[0].scrollHeight;
     }, 3010);
 
+
+        setInterval(function(){
+          $("#chatbox").load(window.location.href + " #chatbox" );
+    }, 3000);
+
     });
 
 //pop up
@@ -57,6 +62,10 @@ window.addEventListener('click', function(event) {
     
   }
 }) 
+
+$('.close').click(function() {
+  location.reload();
+});
     
 /*let form = document.getElementById("privatechat")
 let privatemessage = document.getElementById('privatemessage');

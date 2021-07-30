@@ -47,8 +47,10 @@ require 'getprivatemessage.php';
         </form>
     </div>
     <div>
+        <div id="privatechatbox">
         <?php include 'privatechatlog.php'; 
         var_dump($user2);?>
+        </div>
     </div>
     <div id="result"></div>
   </div>

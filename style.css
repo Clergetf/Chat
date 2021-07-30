@@ -214,7 +214,7 @@ button:focus {
 
 
 /*pop up */
- /* The Modal (background) */
+ /* The popup (background) */
  .Popup {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
