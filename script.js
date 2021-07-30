@@ -45,7 +45,6 @@ let span = document.getElementsByClassName("close")[0];
             popup.style.display = "block";
             popuser.textContent = user2
             document.cookie = "user2="+user2;
-
             })
         }
 
@@ -66,7 +65,9 @@ window.addEventListener('click', function(event) {
 $('.close').click(function() {
   location.reload();
 });
-    
+
+
+
 /*let form = document.getElementById("privatechat")
 let privatemessage = document.getElementById('privatemessage');
 form.addEventListener('submit', function(e) {
